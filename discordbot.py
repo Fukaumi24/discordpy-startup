@@ -16,6 +16,12 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
+    
+@bot.command()
+import random
+if message.content == "dice":
+    dice = random.randint(1,2)
+    await message.send_message(message.channel, str(dice))
 
 
 bot.run(token)
