@@ -1,10 +1,9 @@
 from discord.ext import commands
 import os
 import traceback
-
+import random
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
-import random
 
 
 @bot.event
@@ -18,10 +17,8 @@ async def on_command_error(ctx, error):
 async def ping(ctx):
     await ctx.send('pong')
     
-@bot.command()
 if message.content == "dice":
     dice = random.randint(1,2)
     await message.send_message(message.channel, str(dice))
-
 
 bot.run(token)
