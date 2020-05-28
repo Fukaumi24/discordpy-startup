@@ -4,6 +4,7 @@ import traceback
 
 bot = commands.Bot(command_prefix='/')
 token = os.environ['DISCORD_BOT_TOKEN']
+import random
 
 
 @bot.event
@@ -18,7 +19,6 @@ async def ping(ctx):
     await ctx.send('pong')
     
 @bot.command()
-import random
 if message.content == "dice":
     dice = random.randint(1,2)
     await message.send_message(message.channel, str(dice))
